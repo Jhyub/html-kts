@@ -13,9 +13,7 @@ repositories {
 
 dependencies {
     compileOnly(project(":html-kts-core"))
-    implementation(kotlin("reflect"))
-    implementation(kotlin("scripting-jvm"))
-    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
+    implementation("io.ktor:ktor-server-core:1.6.1")
 }
 
 tasks.withType<KotlinCompile>() {

@@ -7,6 +7,10 @@ plugins {
 group = "dev.jhseo"
 version = "0.1.0"
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation(project(":html-kts-core"))
 }

@@ -12,11 +12,13 @@ repositories {
 }
 
 dependencies {
-    compileOnly(kotlin("scripting-jvm"))
-    compileOnly(kotlin("scripting-jvm-host"))
-    compileOnly(kotlin("scripting-compiler"))
-    compileOnly(kotlin("reflect"))
-    compileOnly("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
+    implementation(kotlin("scripting-jvm"))
+    implementation(kotlin("scripting-jvm-host"))
+    implementation(kotlin("scripting-compiler"))
+    implementation(kotlin("reflect"))
+    runtimeOnly(kotlin("compiler"))
+
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
     compileOnly("io.ktor:ktor-server-core:1.6.1")
 }
 
