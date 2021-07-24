@@ -25,7 +25,7 @@ object HtmlKtsCompileConfig : ScriptCompilationConfiguration(
             )
         )
         jvm {
-            dependenciesFromCurrentContext("kotlinx-html-jvm")
+            dependenciesFromCurrentContext("kotlinx-html-jvm", "ktor-server-core-jvm")
         }
         ide {
             acceptedLocations(ScriptAcceptedLocation.Sources)
