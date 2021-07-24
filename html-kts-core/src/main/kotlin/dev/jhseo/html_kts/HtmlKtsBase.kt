@@ -1,4 +1,4 @@
-package dev.jhseo.html_kts.api
+package dev.jhseo.html_kts
 
 import dev.jhseo.html_kts.compiler.HtmlKtsCompileConfig
 import dev.jhseo.html_kts.evaluator.HtmlKtsEvaluateConfig

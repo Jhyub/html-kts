@@ -12,9 +12,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly(project(":html-kts-compiler"))
-    compileOnly(project(":html-kts-evaluator"))
-    compileOnly(kotlin("reflect")) // For compiler users only
+    compileOnly(project(":html-kts-core"))
+    implementation(kotlin("reflect"))
     implementation(kotlin("scripting-jvm"))
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
 }

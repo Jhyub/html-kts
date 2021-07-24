@@ -8,7 +8,7 @@ group = "dev.jhseo"
 version = "0.1.0"
 
 dependencies {
-    implementation(project(":html-kts-compiler"))
+    implementation(project(":html-kts-core"))
 }
 
 tasks.withType<KotlinCompile>() {
