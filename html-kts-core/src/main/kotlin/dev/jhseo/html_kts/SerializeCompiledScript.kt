@@ -10,12 +10,21 @@ internal fun KJvmCompiledScript.serializeToFile(file: File) {
     val serialized = baos.toByteArray()
 
     if (!file.exists()) file.createNewFile()
-    FileOutputStream(file).write(serialized)
+    FileOutputStream(file).run {
+        write(serialized)
+        close()
+    }
+    oos.close()
+    baos.close()
 }
 
 internal fun KJvmCompiledScript.Companion.fromFile(file: File): KJvmCompiledScript {
-    val input = FileInputStream(file).readBytes()
-    val bais = ByteArrayInputStream(input)
+    val fis = FileInputStream(file)
+    val bais = ByteArrayInputStream(fis.readBytes())
     val ois = ObjectInputStream(bais)
-    return ois.readObject() as KJvmCompiledScript
+    val result = ois.readObject() as KJvmCompiledScript
+    ois.close()
+    bais.close()
+    fis.close()
+    return result
 }
