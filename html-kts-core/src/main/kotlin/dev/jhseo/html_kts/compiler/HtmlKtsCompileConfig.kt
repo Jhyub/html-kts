@@ -1,8 +1,5 @@
 package dev.jhseo.html_kts.compiler
 
-import io.ktor.request.*
-import kotlin.reflect.KTypeProjection
-import kotlin.reflect.full.createType
 import kotlin.script.experimental.api.*
 import kotlin.script.experimental.jvm.dependenciesFromCurrentContext
 import kotlin.script.experimental.jvm.jvm
@@ -11,20 +8,10 @@ object HtmlKtsCompileConfig : ScriptCompilationConfiguration(
     {
         defaultImports("kotlinx.html.*")
         implicitReceivers(
-            kotlinx.html.TagConsumer::class
-                .createType(listOf(KTypeProjection.invariant(String::class.createType())))
-        )
-        providedProperties(
-            "request" to ApplicationRequest::class.createType(),
-            "data" to Map::class.createType(
-                listOf(
-                    KTypeProjection.invariant(String::class.createType()),
-                    KTypeProjection.invariant(Any::class.createType(nullable = true))
-                )
-            )
+            KotlinType(dev.jhseo.html_kts.HtmlKtsScriptReceiver::class)
         )
         jvm {
-            dependenciesFromCurrentContext("kotlinx-html-jvm", "ktor-server-core-jvm")
+            dependenciesFromCurrentContext("html-kts-core", "kotlinx-html-jvm", "ktor-server-core-jvm")
         }
         ide {
             acceptedLocations(ScriptAcceptedLocation.Sources)
