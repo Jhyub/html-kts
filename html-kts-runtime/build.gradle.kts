@@ -13,7 +13,6 @@ repositories {
 
 dependencies {
     compileOnly(project(":html-kts-core"))
-    implementation("io.ktor:ktor-server-core:1.6.1")
 }
 
 tasks.withType<KotlinCompile>() {

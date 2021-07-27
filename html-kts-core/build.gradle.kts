@@ -16,7 +16,6 @@ dependencies {
     implementation(kotlin("scripting-jvm-host"))
     implementation(kotlin("scripting-compiler"))
     implementation(kotlin("reflect"))
-    runtimeOnly(kotlin("compiler"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
     compileOnly("io.ktor:ktor-server-core:1.6.1")
