@@ -1,6 +1,6 @@
 package dev.jhseo.html_kts.evaluator
 
-import dev.jhseo.html_kts.HtmlKtsScriptReceiver
+import dev.jhseo.html_kts.api.HtmlKtsScriptReceiver
 import kotlin.script.experimental.api.ScriptEvaluationConfiguration
 import kotlin.script.experimental.api.implicitReceivers
 
