@@ -1,10 +1,10 @@
 package dev.jhseo.html_kts.impl
 
 import dev.jhseo.html_kts.api.RenderOrder
-import dev.jhseo.html_kts.api.RenderOrderFactory
+import dev.jhseo.html_kts.api.RenderOrderingService
 
 class RenderOrderImpl(override val renderOrder: List<String>): RenderOrder {
-    companion object : RenderOrderFactory {
+    companion object : RenderOrderingService {
         override fun String.self(): RenderOrder {
             return RenderOrderImpl(listOf(this@self))
         }
