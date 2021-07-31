@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("scripting-jvm"))
     implementation(kotlin("scripting-jvm-host"))
-    implementation(kotlin("scripting-compiler"))
+    compileOnly(kotlin("scripting-compiler"))
     implementation(kotlin("reflect"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
