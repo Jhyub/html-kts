@@ -4,6 +4,10 @@ plugins {
     kotlin("jvm") version "1.5.21"
 }
 
+repositories {
+    mavenCentral()
+}
+
 group = "dev.jhseo"
 version = "0.1.0"
 

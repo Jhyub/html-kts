@@ -11,6 +11,9 @@ class PrecompilePlugin: Plugin<Project> {
             val javaPlugin = target.convention.getPlugin(JavaPluginConvention::class.java)
             val mainSourceSet = javaPlugin.sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME)
             val resources = mainSourceSet.resources
+            resources.srcDirs.forEach {
+                println(it.path)
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ dependencies {
 gradlePlugin {
     plugins {
         create("htmlKtsPrecompilePlugin") {
-            id = "dev.jhseo.html_kts.precompile"
+            id = "dev.jhseo.html-kts.precompile"
             implementationClass = "dev.jhseo.html_kts.precompile.PrecompilePlugin"
         }
     }
