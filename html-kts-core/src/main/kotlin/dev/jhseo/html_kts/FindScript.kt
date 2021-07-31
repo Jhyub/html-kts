@@ -7,10 +7,10 @@ import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvm.impl.KJvmCompiledScript
 import kotlin.script.experimental.jvmhost.JvmScriptCompiler
 
-fun findCompiledScript(name: String): KJvmCompiledScript? {
+fun findCompiledScript(name: String): KJvmCompiledScript {
     val source = {}::class.java.getResource("/html/$name.html.kts.compiled")
-    val sourceFile = source?.let { File(it.toURI()) }
-    return sourceFile?.let { KJvmCompiledScript.fromFile(it) }
+    val sourceFile = File(source!!.toURI())
+    return KJvmCompiledScript.fromFile(sourceFile)
 }
 
 suspend fun JvmScriptCompiler.findAndCompileRawScript(name: String): KJvmCompiledScript? {
