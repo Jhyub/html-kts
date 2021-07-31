@@ -10,7 +10,7 @@ class TemplatingServiceImpl(scriptDataService: ScriptDataService):
     TemplatingService,
     RenderOrderingService by RenderOrderImpl.Companion,
     ScriptDataService by scriptDataService {
-    override fun <T : Tag> T.yield(id: String?) {
+    override fun <T : Tag> T.yield(id: String?, refineData: (Map<String, Any?>) -> Map<String, Any?>) {
         TODO("Not yet implemented")
     }
 
@@ -18,7 +18,7 @@ class TemplatingServiceImpl(scriptDataService: ScriptDataService):
         TODO("Not yet implemented")
     }
 
-    override fun Tag.render(renderOrder: RenderOrder, data: Map<String, Any?>) {
+    override fun Tag.render(renderOrder: RenderOrder, refineData: (Map<String, Any?>) -> Map<String, Any?>) {
         TODO("Not yet implemented")
     }
 }
