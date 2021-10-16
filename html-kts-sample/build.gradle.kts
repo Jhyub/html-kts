@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(project(":html-kts-core"))
     implementation(project(":html-kts-runtime"))
-    implementation("io.ktor:ktor-server-core:1.6.1")
+    implementation("io.ktor:ktor-server-core:1.6.4")
 }
 
 tasks.withType<KotlinCompile>() {
